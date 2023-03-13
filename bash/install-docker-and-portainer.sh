@@ -19,6 +19,6 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
  sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin && \
  #Now we add Portainer CE (Commumity Edition) to a standalone Docker Instalation (1 Computer)
  sudo docker volume create portainer_data && \
-docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+ sudo docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 # now visits - [IP OF COMPUTER WITH DOCKER]:9443 if accessing remotly. (Make sure port 9443 is open through the firewall)
 #If accessing localy, visit - localhost:9443
